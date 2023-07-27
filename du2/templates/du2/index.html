@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} 
+   My blog
+{% endblock %}
+
+{% block css_file %}
+<link rel="stylesheet" href="{% static "du2/index.css" %}">
+<link rel="stylesheet" href="{% static "du2/post.css" %}">
+{% endblock %}
+
+
+{% block content %}
+
+
+<section id="welcome">
+    <header>
+        <img src="{% static "du2/images/max.jpeg" %}" alt="the author of the blog">
+        <h3>BLOGING SITE</h3>
+    </header>
+    <p>The post demonstrates awareness of its own limitations or implications, and it considers multiple
+         perspectives when appropriate. The entry reflects in-depth engagement with the topic and theory. 
+         3 Satisfactory The post is reasonably focused, 
+        and explanations or analysis are mostly based on examples or other evidence.</p>
+</section>
+
+
+<section id="latest-posts">
+    <h2>Latest Post</h2>
+    <ul>
+        {% for post in posts %}
+       {% include "du2/includes/post.html" %}
+       {% endfor %}
+    </ul>
+
+</section>
+
+
+<section id="about">
+    <h2>What can I do</h2>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis quasi
+         corporis iste? Odit possimus ea illo soluta, eveniet quod ad harum, 
+        eum assumenda in beatae minima quam reprehenderit voluptas sint!
+    </p>
+
+
+    <p>my goal is to have some peace of sleep</p>
+</section>
+    {% endblock %}  

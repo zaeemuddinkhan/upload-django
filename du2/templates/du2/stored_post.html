@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+My stored Post
+{% endblock %}
+
+
+{% block css_file %}
+<link rel="stylesheet" href="{% static "du2/stored_post.css" %}">
+{% endblock %}
+
+{% block content %}
+<section id="stored-posts">
+    {% if not has_posts %}
+       <p>you didn't save any post</p>
+    {% endif %}
+    <ul>
+   {% for post in posts %}
+     <li><a href="{% url "post-detail-page" post.slug %}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+</section>
+{% endblock %}

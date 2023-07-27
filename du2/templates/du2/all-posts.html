@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+    my blog
+{% endblock %}
+
+
+
+{% block css_file %}
+<link rel="stylesheet" href="{% static "du2/post.css" %}">
+<link rel="stylesheet" href="{% static "du2/all-posts.css" %}">
+{% endblock %}
+
+
+{% block content %}
+<section id="all-posts">
+
+    <h2>my collected post</h2>
+
+    <ul>
+        {% for post in all_posts %}
+        {% include "du2/includes/post.html" %}
+        {% endfor %}
+       
+
+     </ul>
+
+</section>
+
+{% endblock %}
